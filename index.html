@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4D FPS Slice (WebGL)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="glcanvas"></canvas>
+
+  <div id="hud" class="panel">
+    <div class="title">4D FPS Slice</div>
+    <div class="stats">
+      <span>FPS: <b id="fps">0</b></span>
+      <span>Pos: <b id="pos">0,0,0</b></span>
+      <span>Yaw/Pitch: <b id="angles">0° / 0°</b></span>
+      <span>W: <b id="w">0.00</b></span>
+      <span>XW/YW/ZW: <b id="rot">0°/0°/0°</b></span>
+    </div>
+    <div class="controls">
+      <div class="row">
+        <label>Scale</label>
+        <input id="qscale" type="range" min="50" max="150" step="10" value="150">
+        <b id="qview">150%</b>
+      </div>
+      <div class="row">
+        <label>Steps</label>
+        <input id="maxsteps" type="range" min="64" max="256" step="16" value="256">
+        <b id="stepsview">256</b>
+      </div>
+      <div class="row">
+        <label>Epsilon</label>
+        <input id="eps" type="range" min="0.0005" max="0.003" step="0.0005" value="0.0005">
+        <b id="epsview">0.0005</b>
+      </div>
+    </div>
+    <div class="help">
+      <b>Управление</b>:
+      <ul>
+        <li>Движение: WASD, Space (вверх), Ctrl (вниз)</li>
+        <li>Взгляд: мышь (клик по канвасу — захват курсора)</li>
+        <li>Срез W: [ и ]</li>
+        <li>Вращения 4D: U/J (XW), I/K (YW), O/L (ZW)</li>
+        <li>Сброс: R</li>
+        <li>Бег: Shift</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="crosshair">
+    <div class="v"></div>
+    <div class="h"></div>
+  </div>
+
+  <noscript>
+    Для работы требуется JavaScript.
+  </noscript>
+
+  <script src="src/main.js"></script>
+</body>
+</html>
